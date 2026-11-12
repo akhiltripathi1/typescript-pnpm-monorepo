@@ -1,14 +1,16 @@
 {
   "name": "my-monorepo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm --parallel --filter @repo/web --filter @repo/api dev",
+    "build": "pnpm --recursive --sort build",
+    "dev:web": "pnpm --filter @repo/web dev",
+    "dev:api": "pnpm --filter @repo/api dev",
+    "build:web": "pnpm --filter @repo/web build",
+    "build:api": "pnpm --filter @repo/api build",
+    "typecheck": "pnpm --recursive --if-present typecheck"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -16,6 +18,8 @@
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@12.18.0",
-  "type": "module"
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  },
+  "packageManager": "pnpm@12.18.0"
 }
