@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --parallel --filter @repo/web --filter @repo/api dev",
+    "dev": "pnpm --recursive --sort build && pnpm --parallel --filter @repo/web --filter @repo/api dev",
     "build": "pnpm --recursive --sort build",
     "dev:web": "pnpm --filter @repo/web dev",
     "dev:api": "pnpm --filter @repo/api dev",
