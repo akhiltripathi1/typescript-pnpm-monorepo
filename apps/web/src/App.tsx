@@ -8,7 +8,7 @@ import {
 
 import Header from "./components/Header";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "";
 
 function App() {
   const [users, setUsers] = useState<User[]>([]);
